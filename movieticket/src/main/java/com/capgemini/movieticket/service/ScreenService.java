@@ -7,7 +7,11 @@ import com.capgemini.movieticket.exception.InValidNameException;
 
 public class ScreenService implements IScreenService {
 
+	// creating DAO object
+
 	ScreenDAO dao = new ScreenDAO();
+
+	// method implementations
 
 	public Screen addScreen(Screen obj) {
 		return dao.addScreen(obj);
@@ -16,28 +20,29 @@ public class ScreenService implements IScreenService {
 	public Boolean deleteScreen(int screenId) {
 		return dao.deleteScreen(screenId);
 	}
+
 	public void viewScreen() {
 		dao.viewScreen();
 	}
-	
 
-	public static boolean isValidScreenId(int screenId,int theatreId) {
-		
-		
-		String id=String.valueOf(screenId);
-		
-		String id1=String.valueOf(theatreId);
+	// validations
+
+	public static boolean isValidScreenId(int screenId, int theatreId) {
+
+		String id = String.valueOf(screenId);
+
+		String id1 = String.valueOf(theatreId);
 		try {
-		if((!id.matches("[0-9]{4}")&& !id1.matches("[2]{1}[0-9]{3}")))
-			
-		{
-			throw new InValidIdException("Invalid ScreenId");
-		}
-		}catch(InValidIdException e) {
-		
+			if ((!id.matches("[0-9]{4}") && !id1.matches("[2]{1}[0-9]{3}")))
+
+			{
+				throw new InValidIdException("Invalid ScreenId");
+			}
+		} catch (InValidIdException e) {
+
 		}
 		return true;
-		
+
 	}
 
 	public static boolean isValidScreenName(String screenName) {
@@ -53,16 +58,12 @@ public class ScreenService implements IScreenService {
 
 	}
 
-	
-
 	public static boolean screenValidation(Screen obj) {
 		boolean flag = false;
-		if (isValidScreenId(obj.getScreenId(), obj.getTheatreId()) && isValidScreenName(obj.getScreenName()))
-		 {
+		if (isValidScreenId(obj.getScreenId(), obj.getTheatreId()) && isValidScreenName(obj.getScreenName())) {
 			flag = true;
 		}
 		return flag;
 	}
 
 }
-

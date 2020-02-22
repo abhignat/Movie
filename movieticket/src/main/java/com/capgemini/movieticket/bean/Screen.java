@@ -13,12 +13,8 @@ public class Screen {
 	private String screenName;
 	private int rows;
 	private LocalDate movieEndDate;
-	public List<Show> showlist=new ArrayList<Show>();
-	
-	//public List<Show> listOfShows=new ArrayList<Show>();
-	
-	public static Map<Integer,String> listOfScreens=new HashMap<Integer,String>();
-	
+	public List<Show> showlist = new ArrayList<Show>();
+
 	public Screen(int screenId, int theatreId, String screenName, int rows, LocalDate movieEndDate,
 			List<Show> showlist) {
 		super();
@@ -30,26 +26,20 @@ public class Screen {
 		this.showlist = showlist;
 	}
 
-
-
-
 	public Screen() {
-	
-		
+
 	}
 
- public List<Show> getShowlist() {
+	public List<Show> getShowlist() {
 		return showlist;
 	}
-
-	
 
 	public void setShowlist(List<Show> showlist) {
 		this.showlist = showlist;
 	}
 
 	public int getScreenId() {
-		
+
 		return screenId;
 	}
 
@@ -64,6 +54,7 @@ public class Screen {
 	public void setTheatreId(int theatreId) {
 		this.theatreId = theatreId;
 	}
+
 	public String getScreenName() {
 		return screenName;
 	}
@@ -90,13 +81,9 @@ public class Screen {
 
 	@Override
 	public String toString() {
-		return "Screen [ theatreId=" +theatreId+ ", screenName=" + screenName + ", rows="
-				+ rows + ", movieEndDate=" + movieEndDate + ", showlist=" + showlist + "]";
+		return "Screen [ theatreId=" + theatreId + ", screenName=" + screenName + ", rows=" + rows + ", movieEndDate="
+				+ movieEndDate + ", showlist=" + showlist + "]";
 	}
 
-	
 }
 
-
-
-	
